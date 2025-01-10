@@ -11,10 +11,23 @@
 #root {
   display: flex;
   min-height: 100vh;
+  animation: fadeIn 1.5s;
 }
 
 #result::-webkit-scrollbar {
   display: none;
+}
+
+#recent-entry {
+  animation: fadeIn 1.5s;
+}
+
+.myfade {
+  animation: fadeIn 1.5s;
+}
+
+.myfade {
+  animation: fadeIn 1.5s;
 }
 
 .loader {
@@ -37,5 +50,20 @@
   }
   100% {
     background-position: 800px 0px;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  #Sidebar {
+    display: none;
   }
 }
