@@ -13,11 +13,20 @@ const ContextProvider = (props) => {
     const [resultData, setResultData] = useState("");
 
     const onSent = async (prompt) => {
-        await run(prompt)
+        setResultData("")
+        setLoading(true)
+        setShowResult(true)
+        setRecentPrompt(input)
+        const response = await run(input)
+        setResultData(response)
+        setLoading(false)
+        setInput("")
     }
 
 
-    const contextValue = {}
+    const contextValue = {
+        previousPrompt, setPreviousPrompt, onSent, recentPrompt, setRecentPrompt, showResult, loading, resultData, input, setInput, setShowResult, setLoading, setResultData
+    }
 
     return (
         <Context.Provider value={contextValue}>{props.children}</Context.Provider>
